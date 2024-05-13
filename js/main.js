@@ -4,7 +4,7 @@
 
 let deckId = '';
 
-//gets deck of cards and stores ID of the deck (put that in local storage later)
+//gets deck of cards on page load and stores ID of the deck (put that in local storage later)
 fetch('https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1')
   .then((res) => res.json()) //parse response as JSON
   .then((data) => {
@@ -42,6 +42,7 @@ function drawTwo() {
     });
 }
 
+//helper function to convert face cards to numeric values for comparison
 function convertToNum(val) {
   if (val === 'ACE') {
     return 14;
